@@ -55,13 +55,6 @@ describe('selector strategies helper', () => {
         element.value.should.be.equal('(//div)[7]/span')
     })
 
-    // check if it is still backwards compatible for obsolete command
-    it('should find an element by defining custom strategy', () => {
-        const element = findStrategy('my special strategy', '#.some [weird] selector', () => {})
-        element.using.should.be.equal('my special strategy')
-        element.value.should.be.equal('#.some [weird] selector')
-    })
-
     it('should find an element by tag name + content', () => {
         const element = findStrategy('div=some random text with "§$%&/()div=or others')
         element.using.should.be.equal('xpath')
