@@ -144,4 +144,10 @@ describe('selector strategies helper', () => {
         element.using.should.be.equal('css selector')
         element.value.should.be.equal('#foo[bar]')
     })
+
+    it('should recognise second hash as CSS', () => {
+        const element = findStrategy('#foo #bar')
+        element.using.should.be.equal('css selector')
+        element.value.should.be.equal('#foo #bar')
+    })
 })
