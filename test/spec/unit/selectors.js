@@ -138,4 +138,10 @@ describe('selector strategies helper', () => {
         element.using.should.be.equal('accessibility id')
         element.value.should.be.equal('foo')
     })
+
+    it('should recognise brackets as CSS', () => {
+        const element = findStrategy('#foo[bar]')
+        element.using.should.be.equal('css selector')
+        element.value.should.be.equal('#foo[bar]')
+    })
 })
